@@ -1,90 +1,223 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xavier Scent and Care | Luxury Perfumes</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container navbar">
-            <a href="index.html" class="logo">Xavier <span>Scent</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Shop</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="menu-toggle" id="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </header>
+// js/main.js
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Discover Your Signature Scent</h1>
-            <p>Premium handpicked fragrances for the modern individual. Elegance in every bottle.</p>
-            <a href="products.html" class="btn">Shop Now</a>
-        </div>
-    </section>
+// 1. Product Data (Simulated Database)
+const products = [
+    {
+        id: 1,
+        name: "Yara Perfume",
+        price: "21800",
+        image: "/perf1.jpeg",
+        description: "A rich, woody fragrance blending rare oud with hints of amber and smoke. Perfect for evening wear."
+    },
+    {
+        id: 2,
+        name: "Dove",
+        price: 35000,
+        image: "/perf5.jpeg",
+        description: "A romantic bouquet of fresh roses with subtle notes of vanilla and musk. Elegant and timeless."
+    },
+    {
+        id: 3,
+        name: "Dove Soap",
+        price: 12000,
+        image: "/soap1.jpeg",
+        description: "An energizing burst of lemon and bergamot. Ideal for the modern man or woman on the go."
+    },
+    {
+        id: 4,
+        name: "Royal Musk",
+        price: 55000,
+        image: "/perf3.jpeg",
+        description: "A sophisticated blend of traditional musk and jasmine. Long-lasting and commanding."
+    },
+    {
+        id: 5,
+        name: "Red Diamond",
+        price: 12000,
+        image: "/perf6.jpeg",
+        description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
+    },
+    {
+        id: 6,
+        name: "Storm",
+        price: 15500,
+        image: "/perf8.jpeg",
+        description: "Warm, resinous amber notes mixed with sandalwood. A cozy fragrance for cool nights."
 
-    <!-- Featured Products -->
-    <section class="container">
-        <div class="section-title">
-            <h2>Featured Collection</h2>
-            <p>Our most loved scents of the season</p>
-        </div>
-        <div id="featured-products" class="product-grid">
-            <!-- Products injected by JS -->
-        </div>
-    </section>
+    },
+    {
+        id: 7,
+        name: "Storm",
+        price: 9000,
+        image: "/perf11.jpeg",
+        description: "Warm, resinous amber notes mixed with sandalwood. A cozy fragrance for cool nights."
 
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <h4>Xavier Scent</h4>
-                <p>Luxury fragrances delivered to your doorstep. Quality guaranteed.</p>
+    },
+      {
+        id: 8,
+        name: "Riggs",
+        price: 11000,
+        image: "/perf10.jpeg",
+        description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
+    },
+    {
+        id: 9,
+        name: "Vanilla",
+        price: "2,500",
+        image: "/vanilla.jpeg",
+        description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
+    },
+      {
+        id: 10,
+        name: "Dove and scrub",
+        price: "12,000-15,000",
+        image: "/dove.jpeg",
+        description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
+    },
+    {
+        id: 11,
+        name: "Oud Alayl",
+        price: 14000,
+        image: "/Oud Alayl.jpeg",
+        description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
+    },
+     {
+        id: 12,
+        name: "My her",
+        price: "4,500",
+        image: "/myher.jpeg",
+        description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
+    },
+      {
+        id: 13,
+        name: "24Kperfume",
+        price: "6000",
+        image: "/24.jpeg",
+        description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
+    },
+       {
+        id: 14,
+        name: "Sugar Chrome",
+        price: "19000",
+        image: "/sugar.jpeg",
+        description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
+    },
+       {
+        id: 15,
+        name: "Sugar Cake",
+        price: "19000",
+        image: "/sugarc.jpeg",
+        description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
+    },
+      {
+        id: 16,
+        name: "9PM",
+        price: 55000,
+        image: "/9pm.jpeg",
+        description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
+    },
+];
+
+// 2. Configuration
+const WHATSAPP_NUMBER = "2349019370262"; // Replace with your actual number (Country code + Number, no plus sign)
+
+// 3. DOM Elements & Logic
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Render Featured Products (Homepage)
+    const featuredGrid = document.getElementById('featured-products');
+    if (featuredGrid) {
+        renderProducts(products.slice(0, 4), featuredGrid);
+    }
+
+    // Render All Products (Shop Page)
+    const shopGrid = document.getElementById('shop-products');
+    if (shopGrid) {
+        renderProducts(products, shopGrid);
+    }
+
+    // Render Product Detail (Detail Page)
+    const detailContainer = document.getElementById('product-detail-content');
+    if (detailContainer) {
+        renderProductDetail(detailContainer);
+    }
+});
+
+// Helper: Render Product Cards
+function renderProducts(productList, container) {
+    container.innerHTML = productList.map(product => `
+        <div class="product-card">
+            <div class="product-image">
+                <a href="product-detail.html?id=${product.id}">
+                    <img src="${product.image}" alt="${product.name}">
+                </a>
             </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="products.html">Shop All</a></li>
-                    <li><a href="about.html">Our Story</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+            <div class="product-info">
+                <h3>${product.name}</h3>
+                <span class="price">₦${(typeof product.price === 'number' ? product.price.toLocaleString() : String(product.price).replace(/,/g, ''))}</span>
+                <button onclick="handleBuyNow('${product.name}', ${typeof product.price === 'number' ? product.price : parseInt(String(product.price).replace(/,/g, ''))})" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Buy Now
+                </button>
             </div>
-            <div class="footer-col">
-                <h4>Newsletter</h4>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Your Email">
-                    <button type="submit">Join</button>
-                </form>
+        </div>
+    `).join('');
+}
+
+// Helper: Render Single Product Detail
+function renderProductDetail(container) {
+    // Get ID from URL
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const product = products.find(p => p.id == id);
+
+    if (product) {
+        document.title = `${product.name} | Xavier Scent`;
+        container.innerHTML = `
+            <div class="detail-image">
+                <img src="${product.image}" alt="${product.name}">
             </div>
-            <div class="footer-col">
-                <h4>Follow Us</h4>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
+            <div class="detail-content">
+                <h1>${product.name}</h1>
+                <span class="price">₦${product.price.toLocaleString()}</span>
+                <p>${product.description}</p>
+                
+                <div class="quantity-selector">
+                    <label for="qty">Quantity:</label>
+                    <input type="number" id="qty" value="1" min="1">
                 </div>
-            </div>
-        </div>
-        <div class="container copyright">
-            &copy; 2026 Xavier Scent and Care. All rights reserved.
-        </div>
-    </footer>
 
-    <script src="js/main.js"></script>
-</body>
-</html>
+                <button onclick="handleBuyNowDetail('${product.name}', ${product.price})" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                </button>
+            </div>
+        `;
+    } else {
+        container.innerHTML = `<p class="container">Product not found. <a href="products.html">Back to Shop</a></p>`;
+    }
+}
+
+// Logic: Handle Buy Now (From Grid)
+function handleBuyNow(name, price) {
+    const message = `Hello, I want to buy 1 ${name} for ₦${price.toLocaleString()}.`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+}
+
+// Logic: Handle Buy Now (From Detail Page with Quantity)
+function handleBuyNowDetail(name, price) {
+    const qtyInput = document.getElementById('qty').value;
+    const total = price * qtyInput;
+    const message = `Hello, I want to buy ${qtyInput} unit(s) of ${name}. Total: ₦${total.toLocaleString()}.`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+}
