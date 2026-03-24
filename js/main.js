@@ -5,7 +5,7 @@ const products = [
     {
         id: 1,
         name: "Yara Perfume",
-        price: "21,800",
+        price: "21800",
         image: "/perf1.jpeg",
         description: "A rich, woody fragrance blending rare oud with hints of amber and smoke. Perfect for evening wear."
     },
@@ -27,7 +27,7 @@ const products = [
         id: 4,
         name: "Royal Musk",
         price: 55000,
-        image: "perf3.jpeg",
+        image: "/perf3.jpeg",
         description: "A sophisticated blend of traditional musk and jasmine. Long-lasting and commanding."
     },
     {
@@ -40,15 +40,15 @@ const products = [
     {
         id: 6,
         name: "Storm",
-        price: "15,500",
+        price: 15500,
         image: "/perf8.jpeg",
         description: "Warm, resinous amber notes mixed with sandalwood. A cozy fragrance for cool nights."
 
     },
-     {
+    {
         id: 7,
         name: "Storm",
-        price: "9000",
+        price: 9000,
         image: "/perf11.jpeg",
         description: "Warm, resinous amber notes mixed with sandalwood. A cozy fragrance for cool nights."
 
@@ -58,6 +58,62 @@ const products = [
         name: "Riggs",
         price: 11000,
         image: "/perf10.jpeg",
+        description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
+    },
+    {
+        id: 9,
+        name: "Vanilla",
+        price: "2,500",
+        image: "/vanilla.jpeg",
+        description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
+    },
+      {
+        id: 10,
+        name: "Dove and scrub",
+        price: "12,000-15,000",
+        image: "/dove.jpeg",
+        description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
+    },
+    {
+        id: 11,
+        name: "Oud Alayl",
+        price: 14000,
+        image: "/Oud Alayl.jpeg",
+        description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
+    },
+     {
+        id: 12,
+        name: "My her",
+        price: "4,500",
+        image: "/myher.jpeg",
+        description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
+    },
+      {
+        id: 13,
+        name: "24Kperfume",
+        price: "6000",
+        image: "/24.jpeg",
+        description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
+    },
+       {
+        id: 14,
+        name: "Sugar Chrome",
+        price: "19000",
+        image: "/sugar.jpeg",
+        description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
+    },
+       {
+        id: 15,
+        name: "Sugar Cake",
+        price: "19000",
+        image: "/sugarc.jpeg",
+        description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
+    },
+      {
+        id: 16,
+        name: "9PM",
+        price: 55000,
+        image: "/9pm.jpeg",
         description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
     },
 ];
@@ -108,8 +164,8 @@ function renderProducts(productList, container) {
             </div>
             <div class="product-info">
                 <h3>${product.name}</h3>
-                <span class="price">₦${product.price.toLocaleString()}</span>
-                <button onclick="handleBuyNow('${product.name}', ${product.price})" class="btn btn-whatsapp">
+                <span class="price">₦${(typeof product.price === 'number' ? product.price.toLocaleString() : String(product.price).replace(/,/g, ''))}</span>
+                <button onclick="handleBuyNow('${product.name}', ${typeof product.price === 'number' ? product.price : parseInt(String(product.price).replace(/,/g, ''))})" class="btn btn-whatsapp">
                     <i class="fab fa-whatsapp"></i> Buy Now
                 </button>
             </div>
