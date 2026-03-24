@@ -92,7 +92,7 @@ const products = [
         id: 13,
         name: "24Kperfume",
         price: "6000",
-        image: "/24.jpeg",
+        image: "/2k.jpeg",
         description: "Fresh aquatic notes inspired by the deep blue sea. Clean, crisp, and refreshing."
     },
        {
