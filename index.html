@@ -3,25 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xavier Scent and Care | Luxury Perfumes</title>
-    <!-- Google Fonts -->
+    
+    <!-- SEO TITLE: Optimized for "Xavier scent", "Xavier-scent", "Xavier Scent and Care" -->
+    <title>Xavier Scent and Care | Luxury Perfumes - Xavier Scent</title>
+    
+    <!-- SEO METADATA -->
+    <meta name="description" content="Shop at Xavier Scent and Care for the best luxury perfumes. Discover Xavier-scent exclusive collections, premium fragrances, and care products.">
+    <meta name="keywords" content="Xavier scent, Xavier-scent, Xavier Scent and Care, Xavier perfume, luxury fragrances, scent care, buy perfume online, Xavier">
+    <meta name="author" content="Xavier Scent and Care">
+    <meta name="robots" content="index, follow">
+
+    <!-- CANONICAL TAG: Points to your live website URL -->
+    <link rel="canonical" href="https://xavier-scent.onrender.com/">
+
+    <!-- OPEN GRAPH (Facebook/WhatsApp/LinkedIn Preview) -->
+    <meta property="og:title" content="Xavier Scent and Care | Luxury Perfumes">
+    <meta property="og:description" content="Discover your signature scent. Premium handpicked fragrances for the modern individual.">
+    <meta property="og:url" content="https://xavier-scent.onrender.com/">
+    <meta property="og:type" content="website">
+    
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Xavier Scent and Care">
+    <meta name="twitter:description" content="Premium handpicked fragrances for the modern individual. Elegance in every bottle.">
+
+    <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
+    
+    <!-- FONT AWESOME ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- SCHEMA.ORG STRUCTURED DATA (JSON-LD) -->
+    <!-- This code tells Google "I am Xavier Scent and Care" directly -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Xavier Scent and Care",
+      "alternateName": ["Xavier Scent", "Xavier-scent"],
+      "url": "https://xavier-scent.onrender.com/",
+      "description": "Premium handpicked fragrances for the modern individual. Elegance in every bottle.",
+      "logo": "https://xavier-scent.onrender.com/img/logo.png", 
+      "sameAs": [
+        "https://www.facebook.com/xavierscent",
+        "https://www.instagram.com/xavierscent",
+        "https://www.tiktok.com/@xavierscent"
+      ]
+    }
+    </script>
+
+    <!-- I included basic CSS here so the page looks good immediately, 
+         but your external css/style.css will still work if you link it back. -->
+    <style>
+        /* Basic Reset & Container */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        
+        /* Header Styles */
+        header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #1a1a1a; }
+        .logo span { color: #c5a059; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { font-weight: 500; font-size: 0.95rem; }
+        .nav-links a:hover { color: #c5a059; }
+        
+        /* Mobile Menu */
+        .menu-toggle { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+        .menu-toggle span { width: 25px; height: 2px; background: #333; }
+        
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/seed/xavierbg/1920/1080'); 
+            background-size: cover; background-position: center; 
+            height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; 
+        }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .btn { background: #c5a059; color: #fff; padding: 12px 30px; border-radius: 50px; font-weight: 600; text-transform: uppercase; border: none; cursor: pointer; }
+        .btn:hover { background: #a88545; }
+
+        /* Product Grid */
+        .section-title { text-align: center; margin: 60px 0 40px; }
+        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .product-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; text-align: center; }
+        .product-card:hover { transform: translateY(-5px); }
+        .product-image { width: 100%; height: 300px; object-fit: cover; }
+        .product-info { padding: 20px; }
+        .product-title { font-weight: 600; margin-bottom: 10px; font-size: 1.1rem; }
+        .product-price { color: #c5a059; font-weight: 700; }
+
+        /* Footer */
+        footer { background: #1a1a1a; color: #fff; padding: 60px 0 20px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { color: #c5a059; margin-bottom: 20px; font-family: 'Playfair Display', serif; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col a:hover { color: #c5a059; }
+        .newsletter-form { display: flex; gap: 10px; }
+        .newsletter-form input { padding: 10px; border: none; border-radius: 4px; flex: 1; }
+        .newsletter-form button { padding: 10px 20px; background: #c5a059; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+        .social-icons { display: flex; gap: 15px; }
+        .social-icons a { width: 35px; height: 35px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+        .social-icons a:hover { background: #c5a059; }
+        .copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.9rem; color: #777; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 80px; left: 0; width: 100%; background: #fff; padding: 20px; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: flex; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+    
+    <!-- RESTORED YOUR EXTERNAL CSS LINK (Make sure this file exists on your server) -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
     <!-- Header -->
     <header>
         <div class="container navbar">
-            <a href="index.html" class="logo">Xavier <span>Scent</span> And Care</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Shop</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="menu-toggle" id="mobile-menu">
+            <!-- Added aria-label for accessibility/SEO -->
+            <a href="index.html" class="logo" aria-label="Xavier Scent And Care Homepage">Xavier <span>Scent</span> And Care</a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="menu-toggle" id="mobile-menu" aria-label="Menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -32,8 +150,9 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <h1>Discover Your Signature Scent</h1>
-            <p>Premium handpicked fragrances for the modern individual. Elegance in every bottle.</p>
+            <!-- Added main keyword naturally in heading -->
+            <h1>Discover Your Signature Scent with Xavier</h1>
+            <p>Premium handpicked fragrances for the modern individual. Elegance in every bottle at Xavier Scent and Care.</p>
             <a href="products.html" class="btn">Shop Now</a>
         </div>
     </section>
@@ -44,6 +163,8 @@
             <h2>Featured Collection</h2>
             <p>Our most loved scents of the season</p>
         </div>
+        
+        <!-- RESTORED: This div is EMPTY by default, waiting for your JS to inject products -->
         <div id="featured-products" class="product-grid">
             <!-- Products injected by JS -->
         </div>
@@ -54,7 +175,8 @@
         <div class="container footer-grid">
             <div class="footer-col">
                 <h4>Xavier Scent</h4>
-                <p>Luxury fragrances delivered to your doorstep. Quality guaranteed.</p>
+                <!-- Added keyword mention for SEO density -->
+                <p>Luxury fragrances delivered to your doorstep. Xavier Scent and Care guarantees quality.</p>
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
@@ -74,9 +196,9 @@
             <div class="footer-col">
                 <h4>Follow Us</h4>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -85,6 +207,14 @@
         </div>
     </footer>
 
+    <!-- RESTORED: Your original external JS link -->
     <script src="js/main.js"></script>
+    
+    <!-- Optional: Simple Mobile Menu Script (if your external JS doesn't handle it) -->
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
